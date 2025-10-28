@@ -1,0 +1,66 @@
+<%- include('partials/header') %>
+
+<main>
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Projects</h1>
+            <p>Minimalist Architecture portfolio of exceptional achievements</p>
+        </div>
+    </section>
+
+    <!-- Project Filters -->
+    <section class="section">
+        <div class="container">
+            <div class="project-filters">
+                <a href="/projects?category=all" class="filter-btn <%= selectedCategory === 'all' ? 'active' : '' %>">All Projects</a>
+                <% if (categories && categories.length > 0) { %>
+                    <% categories.forEach(cat => { %>
+                        <a href="/projects?category=<%= cat.category %>" class="filter-btn <%= selectedCategory === cat.category ? 'active' : '' %>"><%= cat.category %></a>
+                    <% }); %>
+                <% } %>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="projects-grid">
+                <% if (projects && projects.length > 0) { %>
+                    <% projects.forEach(project => { %>
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="<%= project.image_url %>" alt="<%= project.title %>">
+                                <div class="project-overlay">
+                                    <span class="project-category"><%= project.category %></span>
+                                </div>
+                            </div>
+                            <div class="project-info">
+                                <h3><%= project.title %></h3>
+                                <p><%= project.description.substring(0, 150) %>...</p>
+                                <div class="project-meta">
+                                    <span>📍 <%= project.location %></span>
+                                    <span>📅 <%= project.year %></span>
+                                </div>
+                                <a href="/projects/<%= project.id %>" class="btn btn-small">View Details</a>
+                            </div>
+                        </div>
+                    <% }); %>
+                <% } else { %>
+                    <div class="no-results">
+                        <p>No projects found in this category.</p>
+                        <a href="/projects?category=all" class="btn btn-primary">View All Projects</a>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Have a Minimalist Project in Mind?</h2>
+            <p>Let's discuss how Minimalist Architecture can bring your vision to life</p>
+            <a href="/contact" class="btn btn-primary">Start a Conversation</a>
+        </div>
+    </section>
+</main>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,146 @@
+<%- include('partials/header') %>
+
+<main>
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>About Minimalist Architecture</h1>
+            <p>Creating timeless minimalist spaces with precision and elegance</p>
+        </div>
+    </section>
+
+    <!-- Company Story -->
+    <section class="section">
+        <div class="container">
+            <div class="content-split">
+                <div class="content-text">
+                    <h2>Our Story</h2>
+                    <p>Founded in 2004, Minimalist Architecture has grown from a boutique studio into a respected architectural practice specializing in minimalist and sustainable design. Our journey has been driven by an unwavering commitment to design excellence, innovation, and minimalist principles.</p>
+                    <p>We believe that minimalist architecture has the power to transform lives and communities. Every structure we design represents a careful balance of form, function, sustainability, and minimalist elegance. Our portfolio spans residential, commercial, cultural, and urban projects.</p>
+                    <p>With a team of talented architects and designers, we bring diverse perspectives to every project. Our collaborative approach ensures each client's vision becomes reality while exceeding expectations for quality and innovation.</p>
+                </div>
+                <div class="content-image">
+                    <img src="/images/about-main.jpg" alt="Minimalist Architecture Studio">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="mission-vision">
+                <div class="mission-box">
+                    <h3>Our Mission</h3>
+                    <p>To create innovative, sustainable, and minimalist architectural solutions that enhance the quality of life while respecting our environment. We strive to push the boundaries of minimalist design while maintaining the highest standards.</p>
+                </div>
+                <div class="mission-box">
+                    <h3>Our Vision</h3>
+                    <p>To be recognized as a global leader in minimalist sustainable architecture, setting new standards for design excellence and environmental stewardship. Every project contributes positively to communities and our planet.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Core Values</h2>
+                <p>The principles guiding Minimalist Architecture</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-item">
+                    <div class="value-icon">💡</div>
+                    <h4>Innovation</h4>
+                    <p>We embrace minimalist innovation and creative solutions to push architectural boundaries.</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">🌍</div>
+                    <h4>Sustainability</h4>
+                    <p>Environmental responsibility is at the core of every minimalist design decision.</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">⭐</div>
+                    <h4>Excellence</h4>
+                    <p>We maintain the highest standards of quality in minimalist design and execution.</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">🤝</div>
+                    <h4>Collaboration</h4>
+                    <p>We work closely with clients to achieve minimalist design goals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="section team-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Meet Our Team</h2>
+                <p>Expert professionals dedicated to minimalist excellence</p>
+            </div>
+            <div class="team-grid">
+                <% if (team && team.length > 0) { %>
+                    <% team.forEach(member => { %>
+                        <div class="team-member">
+                            <div class="member-image">
+                                <img src="<%= member.image_url %>" alt="<%= member.name %>">
+                            </div>
+                            <div class="member-info">
+                                <h3><%= member.name %></h3>
+                                <p class="member-position"><%= member.position %></p>
+                                <p class="member-bio"><%= member.bio %></p>
+                            </div>
+                        </div>
+                    <% }); %>
+                <% } else { %>
+                    <p>Team information will be available soon.</p>
+                <% } %>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards & Recognition -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Awards & Recognition</h2>
+                <p>Celebrating minimalist architecture excellence</p>
+            </div>
+            <div class="awards-list">
+                <div class="award-item">
+                    <span class="award-year">2024</span>
+                    <div class="award-details">
+                        <h4>Minimalist Design Excellence Award</h4>
+                        <p>For outstanding achievement in minimalist sustainable architecture</p>
+                    </div>
+                </div>
+                <div class="award-item">
+                    <span class="award-year">2023</span>
+                    <div class="award-details">
+                        <h4>International Minimalist Architecture Award</h4>
+                        <p>Recognized for innovative minimalist residential design</p>
+                    </div>
+                </div>
+                <div class="award-item">
+                    <span class="award-year">2023</span>
+                    <div class="award-details">
+                        <h4>LEED Platinum Certification</h4>
+                        <p>Minimalist Green Office Complex Project</p>
+                    </div>
+                </div>
+                <div class="award-item">
+                    <span class="award-year">2022</span>
+                    <div class="award-details">
+                        <h4>Best Minimalist Cultural Building</h4>
+                        <p>Contemporary Art Museum minimalist design</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<%- include('partials/footer') %>

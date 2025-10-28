@@ -1,0 +1,136 @@
+<%- include('partials/header') %>
+
+<main>
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Services</h1>
+            <p>Minimalist architectural solutions tailored to your needs</p>
+        </div>
+    </section>
+
+    <!-- Services Introduction -->
+    <section class="section">
+        <div class="container">
+            <div class="intro-text">
+                <p>At Minimalist Architecture, we offer comprehensive minimalist architectural services designed to transform your vision into reality. From initial concept development to final construction oversight, our experienced team provides expertise at every stage. We combine minimalist innovation thinking with practical solutions to deliver beautiful, functional, and sustainable spaces.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services List -->
+    <section class="section services-detail">
+        <div class="container">
+            <% if (services && services.length > 0) { %>
+                <% services.forEach((service, index) => { %>
+                    <div class="service-detail <%= index % 2 === 0 ? 'service-left' : 'service-right' %>">
+                        <div class="service-content">
+                            <div class="service-icon-large">
+                                <% if (service.icon === 'design') { %>🏗️
+                                <% } else if (service.icon === 'interior') { %>🎨
+                                <% } else if (service.icon === 'urban') { %>🏙️
+                                <% } else if (service.icon === 'sustainable') { %>🌿
+                                <% } else if (service.icon === 'management') { %>📋
+                                <% } else if (service.icon === 'visualization') { %>🖼️
+                                <% } else { %>✨<% } %>
+                            </div>
+                            <h3><%= service.name %></h3>
+                            <p><%= service.description %></p>
+                        </div>
+                    </div>
+                <% }); %>
+            <% } else { %>
+                <p>Service information will be available soon.</p>
+            <% } %>
+        </div>
+    </section>
+
+    <!-- Our Process -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Minimalist Process</h2>
+                <p>A proven approach to delivering minimalist excellence</p>
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">01</div>
+                    <h4>Discovery & Consultation</h4>
+                    <p>We understand your minimalist vision through in-depth consultations and site analysis.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">02</div>
+                    <h4>Minimalist Concept Development</h4>
+                    <p>Our team creates minimalist design concepts, exploring solutions and innovative ideas.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">03</div>
+                    <h4>Design Development</h4>
+                    <p>We refine the minimalist design, developing detailed plans and 3D visualizations.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">04</div>
+                    <h4>Documentation</h4>
+                    <p>Complete construction documents with all technical minimalist specifications.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">05</div>
+                    <h4>Construction Administration</h4>
+                    <p>We oversee construction to ensure minimalist design vision is faithfully executed.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">06</div>
+                    <h4>Project Completion</h4>
+                    <p>Final inspections and handover of your minimalist architectural masterpiece.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Minimalist Architecture -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose Minimalist Architecture</h2>
+                <p>What sets us apart in minimalist design</p>
+            </div>
+            <div class="why-choose-grid">
+                <div class="why-item">
+                    <h4>🏆 Award-Winning Minimalist Design</h4>
+                    <p>Our projects have received numerous awards for minimalist excellence and innovation.</p>
+                </div>
+                <div class="why-item">
+                    <h4>🌱 Sustainability Focus</h4>
+                    <p>We prioritize environmentally responsible minimalist design and sustainable practices.</p>
+                </div>
+                <div class="why-item">
+                    <h4>👥 Expert Team</h4>
+                    <p>Talented professionals bringing decades of minimalist architecture experience.</p>
+                </div>
+                <div class="why-item">
+                    <h4>🎯 Client-Centered Approach</h4>
+                    <p>We listen carefully and work collaboratively to realize your minimalist vision.</p>
+                </div>
+                <div class="why-item">
+                    <h4>⚡ Innovative Solutions</h4>
+                    <p>We leverage cutting-edge technology for unique minimalist solutions.</p>
+                </div>
+                <div class="why-item">
+                    <h4>✅ Quality Assurance</h4>
+                    <p>Rigorous quality control ensures minimalist architectural excellence throughout.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Start Your Minimalist Project?</h2>
+            <p>Contact Minimalist Architecture today to discuss your needs</p>
+            <a href="/contact" class="btn btn-primary">Request a Consultation</a>
+        </div>
+    </section>
+</main>
+
+<%- include('partials/footer') %>

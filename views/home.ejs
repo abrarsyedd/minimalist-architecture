@@ -1,0 +1,120 @@
+<%- include('partials/header') %>
+
+<main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Minimalist Architecture Excellence</h1>
+            <p class="hero-subtitle">Premium design studio creating innovative, sustainable, and beautiful spaces through minimalist principles</p>
+            <div class="hero-buttons">
+                <a href="/projects" class="btn btn-primary">View Our Work</a>
+                <a href="/contact" class="btn btn-secondary">Get Started</a>
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <!-- About Preview -->
+    <section class="section about-preview">
+        <div class="container">
+            <div class="section-header">
+                <h2>Who We Are</h2>
+                <p>Excellence in minimalist architecture and design</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Minimalist Architecture Studio</h3>
+                    <p>Minimalist Architecture is a leading design studio dedicated to creating innovative, sustainable, and minimalist architectural spaces. Our team of talented architects and designers bring together decades of experience to transform visions into elegant reality.</p>
+                    <p>We believe that great minimalist architecture goes beyond aesthetics—it enhances lives through simplicity, respects the environment, and stands the test of time. Every project reflects our commitment to minimalist excellence and innovation.</p>
+                    <a href="/about" class="btn btn-outline">Learn More About Us</a>
+                </div>
+                <div class="about-image">
+                    <img src="/images/about-preview.jpg" alt="Minimalist Architecture Studio">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section class="section featured-projects">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Projects</h2>
+                <p>Showcasing our minimalist architectural achievements</p>
+            </div>
+            <div class="projects-grid">
+                <% if (projects && projects.length > 0) { %>
+                    <% projects.forEach(project => { %>
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="<%= project.image_url %>" alt="<%= project.title %>">
+                                <div class="project-overlay">
+                                    <span class="project-category"><%= project.category %></span>
+                                </div>
+                            </div>
+                            <div class="project-info">
+                                <h3><%= project.title %></h3>
+                                <p><%= project.description.substring(0, 120) %>...</p>
+                                <div class="project-meta">
+                                    <span>📍 <%= project.location %></span>
+                                    <span>📅 <%= project.year %></span>
+                                </div>
+                            </div>
+                        </div>
+                    <% }); %>
+                <% } else { %>
+                    <p>No featured projects available at the moment.</p>
+                <% } %>
+            </div>
+            <div class="text-center">
+                <a href="/projects" class="btn btn-primary">View All Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Preview -->
+    <section class="section services-preview">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Services</h2>
+                <p>Comprehensive minimalist design solutions</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-box">
+                    <div class="service-icon">🏗️</div>
+                    <h3>Architectural Design</h3>
+                    <p>Minimalist design from concept to construction</p>
+                </div>
+                <div class="service-box">
+                    <div class="service-icon">🌿</div>
+                    <h3>Sustainable Design</h3>
+                    <p>Eco-friendly and energy-efficient solutions</p>
+                </div>
+                <div class="service-box">
+                    <div class="service-icon">🏙️</div>
+                    <h3>Urban Planning</h3>
+                    <p>Strategic minimalist community planning</p>
+                </div>
+                <div class="service-box">
+                    <div class="service-icon">🎨</div>
+                    <h3>Interior Design</h3>
+                    <p>Minimalist and functional interior spaces</p>
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="/services" class="btn btn-outline">Explore All Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Start Your Minimalist Project?</h2>
+            <p>Let's collaborate to bring your architectural vision to life</p>
+            <a href="/contact" class="btn btn-primary">Contact Minimalist Architecture Today</a>
+        </div>
+    </section>
+</main>
+
+<%- include('partials/footer') %>
