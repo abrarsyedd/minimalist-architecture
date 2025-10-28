@@ -4,4 +4,9 @@ node_modules/
 *.log
 dist/
 .cache
+
+terraform_stack/.terraform/
+terraform_stack/.terraform.lock.hcl
+terraform_stack/*.tfstate
+erraform_stack/*.tfstate.backup
 terraform_stack/secret.auto.tfvars
