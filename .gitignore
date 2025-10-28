@@ -4,4 +4,4 @@ node_modules/
 *.log
 dist/
 .cache
-terraform_stack/secret.tfvars_auto.tfvars
+terraform_stack/secret.auto.tfvars
